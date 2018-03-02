@@ -1,0 +1,117 @@
+$color-nav: #141414;
+$color-link: #F2C777;
+$color-hover: whitesmoke;
+$color-border: $color-nav;
+$color-background: #efefef;
+$font-main: monospace;
+* {
+	box-sizing: border-box;
+}
+body {
+	margin: 0;
+	background-color: $color-background;
+}
+h1,h2,h3 {
+	font-family: $font-main;
+}
+p,a,small,button {
+	font-family: $font-main;
+}
+a {
+	text-decoration: none;
+	color: $color-link;
+	font-weight: 700;
+	&:hover {
+		color: $color-hover;
+	}
+}
+button {
+	border-style: none;
+    border-color: $color-link;
+    border-image: none;
+	border: 1px solid;
+	border-radius: 2em;
+	padding: 1em 2em;
+	background-color: $color-background;
+	color: $color-link;
+	text-transform: uppercase;
+	font-weight: 700;
+	&:hover {
+		border: -3px solid $color-border;
+		color: $color-border;
+		padding: calc(1em-2px);
+	}
+}
+nav {
+	background-color: $color-nav;
+	
+}
+
+header {
+	.navigation {
+		ul {
+			margin: 0;
+			padding: 0;
+			li {
+				display: inline-block;
+				list-style-type: none;
+				width: 24%;
+				padding: 1em;
+				text-align: center;
+				font-size: 70%;
+			}
+		}
+	}
+	.big-header {
+		height: 50vh;
+		background-color: $color-border;
+		.header-content {
+			color: $color-link;
+			text-align: center;
+			transform: translate(0, 8em);
+		}
+	}
+}
+
+#more-info {
+	article {
+		width: 80%;
+		margin: 2em auto;
+		main {
+			text-align: center;
+			p {
+				text-align: justify;
+			}
+			#more-button {
+				margin: 0 auto;
+			}
+		}
+	}
+}
+
+#contact-us {
+	width: 80%;
+	margin: 2em auto;
+	input, textarea {
+		width: 100%;
+	}
+	form {
+		text-align: center;
+		button {
+			margin: 1em 0;
+		}
+	}
+}
+
+#footer {
+	text-align: center;
+}
+
+// for tablet screens
+@media screen and (min-width: 425px) and (max-width: 1024px) {}
+
+// for desktop screens
+@media (min-width: 1024px) {}
+
+// screens above 1440px
+@media (min-width: 1440px) {}

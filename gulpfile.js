@@ -7,7 +7,6 @@ gulp.task('sass', function(){
   return gulp.src('app/assets/sass/*.scss')
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest('app/assets/css'))
-    .pipe(minifycss())
     .pipe(gulp.dest('dist/stylesheets/css'))
 });
 

@@ -24,10 +24,11 @@ Folder architecture:
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
 How to use:
 
-1) run npm install
-2) run gulp watch
-3) start coding
-```
+1) npm install
+2) gulp watch
+3) You are ready to start coding.
+

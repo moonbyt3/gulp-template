@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+## Buttons
+--------------------------------------------------------------*/
+.button {
+    position: relative;
+    border: 2px solid $blue-dark;
+    padding: 17px 20px;
+    background-color: $blue-dark;
+    color: $white;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0px;
+    transition: ease-in 0.3s;
+    &::after {
+        content: '';
+        display:block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        border-bottom: 0 solid $blue-light;
+    }
+    &:hover {
+        background-color: $white;
+        color: $blue-dark;
+        &::after {
+            width: 50%;
+        }
+    }
+}

@@ -2,9 +2,10 @@
 This is simple boilerplate for gulp projects. It has browser reload and SCSS preprocessor and basic HTML and CSS markup with media queries and SCSS variables. Mobile first design.
 
 
-Folder architecture: 
+Template folder architecture: 
 
 ```
+gulp-template/
 ├── app
 │   ├── assets
 │   │   ├── css
@@ -12,13 +13,27 @@ Folder architecture:
 │   │   ├── js
 │   │   │   └── main.js
 │   │   └── sass
-│   │       └── main.scss
-│   ├── images
+│   │       ├── base
+│   │       │   ├── _base.scss
+│   │       │   ├── _icons.scss
+│   │       │   └── _typography.scss
+│   │       ├── components
+│   │       │   ├── _buttons.scss
+│   │       │   └── _forms.scss
+│   │       ├── config
+│   │       │   ├── _reset.scss
+│   │       │   └── _variables.scss
+│   │       ├── helpers
+│   │       │   ├── _helper-classes.scss
+│   │       │   └── _mixins.scss
+│   │       ├── main.scss
+│   │       └── partials
+│   │           └── shared
+│   │               ├── _shared-footer.scss
+│   │               ├── _shared-header.scss
+│   │               ├── _shared-main.scss
+│   │               └── _shared-navigation.scss
 │   └── index.html
-├── dist
-│   └── stylesheets
-│       └── css
-│           └── main.css
 ├── gulpfile.js
 ├── LICENSE
 ├── package.json

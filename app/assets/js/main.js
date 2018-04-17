@@ -1,4 +1,4 @@
 window.onload = function(){
-    this.console('Boilerplate by moonbyte')
+    console.log('Boilerplate by moonbyte');
     
 }

@@ -46,4 +46,4 @@ How to use:
 1) npm install
 2) gulp watch
 3) You are ready to start coding.
-
+4) For media queries look at sass/config/variables

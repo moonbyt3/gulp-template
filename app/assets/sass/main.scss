@@ -1,14 +1,17 @@
+@import 'base/base';
 @import 'config/reset';
 @import 'config/variables';
-@import 'base/base';
-@import 'base/typography';
-@import 'base/icons';
-@import 'components/buttons';
-@import 'components/forms';
-
-@import 'partials/shared/shared-main';
-@import 'partials/shared/shared-header';
-@import 'partials/shared/shared-navigation';
-@import 'partials/shared/shared-footer';
-
+@import 'config/colors';
+@import 'helpers/mixins';
 @import 'helpers/helper-classes';
+@import 'base/typography';
+@import 'base/icon-font';
+@import 'base/icons';
+@import 'base/buttons';
+@import 'base/forms';
+
+
+@import 'shared/shared-main';
+@import 'shared/shared-header';
+@import 'shared/shared-navigation';
+@import 'shared/shared-footer';

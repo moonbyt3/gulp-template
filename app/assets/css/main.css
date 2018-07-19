@@ -1,3 +1,18 @@
+@charset "UTF-8";
+/*--------------------------------------------------------------
+## Base Layout
+--------------------------------------------------------------*/
+html, body {
+  height: 100%; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
 /*--------------------------------------------------------------
 ## Reset
 --------------------------------------------------------------*/
@@ -257,18 +272,32 @@ td {
   background-color: #fcc401; }
 
 /*--------------------------------------------------------------
-## Base Layout
+## Mixins
 --------------------------------------------------------------*/
-html, body {
-  height: 100%; }
+/*
+	Example:
+	-------------------------------------------------------------------------------------------------
+	@include mq($phone) 			 	@media screen and (max-width: 640px)
+	-------------------------------------------------------------------------------------------------
+	@include mq(991) 			 	 	@media screen and (max-width: 991px)
+	-------------------------------------------------------------------------------------------------
+	@include mq($phone + 1, min) 	 	@media screen and (min-width: 641px)
+	-------------------------------------------------------------------------------------------------
+	@include mq(992, min) 			 	@media screen and (min-width: 992px)
+	-------------------------------------------------------------------------------------------------
+	@include mq(400, min, height) 	 	@media screen and (min-height: 400px)
+	-------------------------------------------------------------------------------------------------
+	@include mq(992) {				 	@media screen and (max-width: 992px) and (min-width: 767px)
+		@include mq(767, min) {
 
-html {
-  box-sizing: border-box; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
+		}
+	}
+	-------------------------------------------------------------------------------------------------
+ */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table; }
 
 /*--------------------------------------------------------------
 ## Typography
@@ -292,6 +321,23 @@ pre {
   max-width: 100%;
   overflow: auto;
   padding: 1.6em; }
+
+@font-face {
+  font-family: "font-icons";
+  src: url("../../assets/fonts/font-icons.woff2") format("woff2"), url("../../assets/fonts/font-icons.woff") format("woff"), url("../../assets/fonts/font-icons.ttf") format("truetype"); }
+
+.icon-twitter:before {
+  font-family: "font-icons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none; }
+
+.icon-twitter:before {
+  content: ""; }
 
 /*--------------------------------------------------------------
 ## Icons
@@ -335,7 +381,3 @@ pre {
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
-.clearfix::after {
-  content: "";
-  clear: both;
-  display: table; }

@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<title>Website name</title>
+	<title>gulp-template</title>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<link rel="stylesheet" href="assets/css/main.css">
@@ -23,6 +23,7 @@
 			<div class="header-content">
 				<h1>This is a heading tittle</h1>
 				<small>Lorem ipsum dolor sit amet.</small>
+				<span class="icon-twitter"></span>
 			</div>
 		</div>
 	</header>
@@ -35,7 +36,7 @@
 					<h2>This is article tittle</h2>
 				</header>
 				<main>
-					<img src="" alt="" />
+					<img src="" alt="Some image goes here" />
 					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur distinctio unde numquam aperiam temporibus voluptas voluptates dolores quo, assumenda inventore quisquam sapiente, dolorum sit veniam id ullam corporis delectus atque aut! Eum cupiditate magnam perspiciatis atque ut soluta esse!</p>
 					<button id="more-button" href="tekst.html" class="button">Read more</button>
 				</main>
@@ -44,14 +45,20 @@
 		
 		<!-- Contact form and info about website -->
 		
-		<section id="contact-us">
-			<div class="form">
+		<section class="contact">
+			<div class="contact-form-wrapper">
 				<h2>Contact us</h2>
-				<form method="post" action="#" novalidate>
+				<form class="contact-form" method="post" action="#" novalidate>
 					<div class="form-group-holder">
-						<div class=""><input type="text" name="first_name" id="name" placeholder="Name" /></div>
-						<div class=""><input type="email" name="email" id="email" placeholder="E-mail" /></div>
-						<div class=""><textarea name="message" id="message" placeholder="Your message" rows="8"></textarea></div>
+						<div class="contact-form-input-wrapper">
+							<input type="text" name="first_name" id="name" placeholder="Name" />
+						</div>
+						<div class="contact-form-input-wrapper">
+							<input type="email" name="email" id="email" placeholder="E-mail" />
+						</div>
+						<div class="contact-form-input-wrapper">
+							<textarea name="message" id="message" placeholder="Your message" rows="8"></textarea>
+						</div>
 					</div>
 					
 					<button type="submit" value="">Send message</button>

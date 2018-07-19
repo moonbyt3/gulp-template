@@ -7,68 +7,14 @@ $font-default-sans-serif: Arial, Helvetica, sans-serif;
 
 $font-main: 'Open Sans', $font-default-sans-serif;
 
-// Colors
-$white: #fff;
-$black: #000;
-$grey: #f4f4f4;
-$grey-light: #fbfbfb;
-$grey-dark: #9a9a9a;
-$grey-darker: #666666;
-$gold: #c1a462;
-$purple: #6c4a8b;
-$rose: #ef798a;
-$red: #FF0303;
-$blue-dark: #1073c7;
-$blue-light: #53c1f2;
-$yellow: #fcc401;
-$orange: orange;
-
-$color-main: $grey-dark;
-
-$color-form: #333333;
-$color-form-dark: #272727;
-
-.bgc-purple {
-    background-color: $purple;
-}
-.bgc-rose {
-    background-color: $rose;
-}
-.bgc-blue-dark {
-    background-color: $blue-dark;
-}
-.bgc-blue-light {
-    background-color: $blue-light;
-}
-.bgc-yellow {
-    background-color: $yellow;
-}
-
-
 // Transitions
 $dur: 350ms;
 $ease: ease;
 
 // Breakpoints
-$mobile-screen: 690px;
-$tablet-screen: 995px;
-$desktop-screen: 1440px;
-
-// Media queries
-
-
-$screen: "only screen";
-$mobile: "only screen and (max-width:#{$mobile-screen})";
-$tablet: "only screen and (min-width:#{$mobile-screen}) and (max-width: #{$tablet-screen})";
-$desktop: "only screen and (min-width:#{$tablet-screen})";
-$landscape: "only screen and (orientation: landscape)";
-$portrait: "only screen and (orientation: portrait)";
-
-
-// EXAMPLE OF USAGE:
-//
-// @media #{$mobile} {
-//     header {
-//         background-color: $red;
-//     }
-// }
+$mobile-sm: 320;
+$mobile: 640;
+$tablet-sm: 768;
+$tablet-md: 1000;
+$tablet: 1200;
+$desktop: 1440;

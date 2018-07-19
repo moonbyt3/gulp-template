@@ -23,26 +23,25 @@
 			<div class="header-content">
 				<h1>This is a heading tittle</h1>
 				<small>Lorem ipsum dolor sit amet.</small>
+				<br>
 				<span class="icon-twitter"></span>
 			</div>
 		</div>
 	</header>
 	
 	<!-- Main -->
-	<main>
-		<section id="more-info">
-			<article>
-				<header>
-					<h2>This is article tittle</h2>
-				</header>
-				<main>
-					<img src="" alt="Some image goes here" />
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur distinctio unde numquam aperiam temporibus voluptas voluptates dolores quo, assumenda inventore quisquam sapiente, dolorum sit veniam id ullam corporis delectus atque aut! Eum cupiditate magnam perspiciatis atque ut soluta esse!</p>
-					<button id="more-button" href="tekst.html" class="button">Read more</button>
-				</main>
-			</article>
-		</section>
-		
+	<div class="site-content">
+
+		<div class="article-wrapper">
+			<h2 class="article-title">This is article tittle</h2>
+			<div class="article">
+				<img src="http://via.placeholder.com/520x300.png" alt="Some image goes here" />
+				
+				<p class="article-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem aspernatur distinctio unde numquam aperiam temporibus voluptas voluptates dolores quo, assumenda inventore quisquam sapiente, dolorum sit veniam id ullam corporis delectus atque aut! Eum cupiditate magnam perspiciatis atque ut soluta esse!</p>
+				<a href="javascript:;" class="btn btn-blue">Read more</a>
+				
+			</div>
+		</div>		
 		<!-- Contact form and info about website -->
 		
 		<section class="contact">
@@ -57,7 +56,7 @@
 							<input type="email" name="email" id="email" placeholder="E-mail" />
 						</div>
 						<div class="contact-form-input-wrapper">
-							<textarea name="message" id="message" placeholder="Your message" rows="8"></textarea>
+							<input type="textarea" name="message" id="message" placeholder="Your message"></input>
 						</div>
 					</div>
 					
@@ -69,11 +68,11 @@
 		</section>
 		
 				
-	</main>
+	</div>
 			
 	<!-- Footer -->
-	<footer id="footer">
-		coded by: moonbyt3
+	<footer class="footer">
+		boilerplate by: moonbyt3
 	</footer>
 	</body>
 </html>

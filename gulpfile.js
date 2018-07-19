@@ -11,6 +11,7 @@ gulp.task('sass', function(){
     .pipe(sass()) // Converts Sass to CSS with gulp-sass
     .pipe(gulp.dest('app/assets/css'))
     .pipe(gulp.dest('dist/stylesheets/css'))
+    .pipe(browserSync.stream());
 });
 
 //icon fonts
@@ -41,9 +42,9 @@ gulp.task('browserSync', function() {
 
 
 gulp.task('watch', [ 'sass', 'browserSync'], function (){
-  gulp.watch('app/assets/sass/*.scss', ['sass']); 
+  gulp.watch('app/assets/sass/**/*.scss', ['sass']); 
   // Reloads the browser whenever HTML, JS or SCSS files change
   gulp.watch('app/*.html', browserSync.reload); 
   gulp.watch('app/assets/js/*.js', browserSync.reload);
-  gulp.watch('app/assets/sass/*.scss', browserSync.reload);
+  gulp.watch('app/assets/sass/**/.scss', browserSync.reload);
 });

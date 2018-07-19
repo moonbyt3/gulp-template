@@ -1,19 +1,5 @@
 @charset "UTF-8";
 /*--------------------------------------------------------------
-## Base Layout
---------------------------------------------------------------*/
-html, body {
-  height: 100%; }
-
-html {
-  box-sizing: border-box; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
-
-/*--------------------------------------------------------------
 ## Reset
 --------------------------------------------------------------*/
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
@@ -254,6 +240,20 @@ td {
   padding: 0.2em 0; }
 
 /*--------------------------------------------------------------
+## Base Layout
+--------------------------------------------------------------*/
+html, body {
+  height: 100%; }
+
+html {
+  box-sizing: border-box; }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit; }
+
+/*--------------------------------------------------------------
 ## Variables
 --------------------------------------------------------------*/
 .bgc-purple {
@@ -340,34 +340,30 @@ pre {
   content: ""; }
 
 /*--------------------------------------------------------------
-## Icons
---------------------------------------------------------------*/
-/*--------------------------------------------------------------
 ## Buttons
 --------------------------------------------------------------*/
-.button {
+.btn {
+  display: block;
   position: relative;
-  border: 2px solid #1073c7;
-  padding: 17px 20px;
-  background-color: #1073c7;
-  color: #fff;
-  font-size: 18px;
+  max-width: 150px;
+  width: 100%;
+  height: 60px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
   font-weight: 600;
+  text-transform: uppercase;
   letter-spacing: 0px;
+  line-height: 60px;
   transition: ease-in 0.3s; }
-  .button::after {
-    content: '';
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-bottom: 0 solid #53c1f2; }
-  .button:hover {
+
+.btn-blue {
+  border: 2px solid #1073c7;
+  background-color: #1073c7;
+  color: #fff; }
+  .btn-blue:hover {
     background-color: #fff;
     color: #1073c7; }
-    .button:hover::after {
-      width: 50%; }
 
 /*--------------------------------------------------------------
 ## Main
@@ -381,3 +377,35 @@ pre {
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
+header, .site-content, .footer {
+  text-align: center;
+  margin: 0 auto 20px;
+  max-width: 640px; }
+
+.navigation ul {
+  display: flex;
+  justify-content: space-between;
+  max-width: 640px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px; }
+  .navigation ul li > a {
+    display: block;
+    margin: 10px;
+    color: #1073c7;
+    transition: 350ms ease; }
+    .navigation ul li > a:hover {
+      color: #53c1f2; }
+
+.article-title {
+  margin: 20px 0 10px; }
+
+.article > img {
+  margin-bottom: 20px; }
+
+.article-wrapper {
+  margin-bottom: 20px;
+  padding: 0 10px; }
+
+.article-text {
+  margin-bottom: 20px; }

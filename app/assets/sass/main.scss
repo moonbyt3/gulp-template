@@ -1,13 +1,17 @@
 @import 'config/reset';
 @import 'base/base';
+
 @import 'config/variables';
 @import 'config/colors';
+
 @import 'helpers/mixins';
 @import 'helpers/helper-classes';
+
 @import 'base/typography';
 @import 'base/icon-font';
-@import 'base/buttons';
-@import 'base/forms';
+
+@import 'parts/buttons';
+@import 'parts/forms';
 
 
 @import 'shared/shared-main';
@@ -20,7 +24,6 @@ header, .site-content, .footer {
     text-align: center;
     margin: 0 auto 20px;
     max-width: 640px;
-
 }
 .navigation {
     ul {

@@ -1,6 +1,7 @@
 var gulp = require('gulp'),
 	iconfont         = require('gulp-iconfont'),
-	iconfontCss      = require('gulp-iconfont-css'),
+  iconfontCss      = require('gulp-iconfont-css'),
+  svgmin           = require('gulp-svgmin'),
 	sass 						 = require('gulp-sass');
 
 var browserSync = require('browser-sync').create();
@@ -14,22 +15,43 @@ gulp.task('sass', function(){
     .pipe(browserSync.stream());
 });
 
+// SVG optimization
+gulp.task('svgomg', function () {
+	return gulp.src('assets/svg/*.svg')
+		.pipe(svgmin({
+			plugins: [
+				{ removeTitle: true },
+				{ removeRasterImages: true },
+				{ sortAttrs: true }
+				//{ removeStyleElement: true }
+			]
+		}))
+		.pipe(gulp.dest('assets/svg'))
+});
+
+
 //icon fonts
-gulp.task('iconfont', function(){
+gulp.task('fonticons', function(){
   gulp.src(['app/assets/svg/*.svg'])
     .pipe(iconfontCss({
-      fontName: 'font-icons',
-      path: 'app/assets/sass/templates/_icon-font.scss', // where is template for updateing sass file
+      fontName: 'fonticons',
+      cssClass: 'font',
+      path: 'app/assets/config/icon-font-config.scss', // where is template for updateing sass file
       targetPath: '../../assets/sass/base/_icon-font.scss', //where to update sass file
-			fontPath: '../../assets/fonts/' // where are fonts exported
+			fontPath: '../../assets/icons/' // where are fonts exported
     }))
     .pipe(iconfont({
-			fontName: 'font-icons',
-      formats: ['ttf', 'eot', 'woff'], // The font file formats that will be created
+      fontName: 'fonticons',
+			prependUnicode: true, // recommended option
+      formats: ['woff2', 'woff', 'ttf'], // The font file formats that will be created
       normalize: true,
-			timestamp: runTimestamp
-     }))
-    .pipe(gulp.dest('app/assets/fonts/'));
+			centerHorizontally: true
+    }))
+    .on('glyphs', function(glyphs, options) {
+			// CSS templating, e.g.
+			console.log(glyphs, options);
+		})
+    .pipe(gulp.dest('app/assets/icons/'));
 });
 
 gulp.task('browserSync', function() {
@@ -47,4 +69,9 @@ gulp.task('watch', [ 'sass', 'browserSync'], function (){
   gulp.watch('app/*.html', browserSync.reload); 
   gulp.watch('app/assets/js/*.js', browserSync.reload);
   gulp.watch('app/assets/sass/**/.scss', browserSync.reload);
+  //watch added or changed svg files to optimize them
+	gulp.watch('assets/svg/*.svg', ['svgomg']);
 });
+
+// Build
+gulp.task('build', ['sass']);

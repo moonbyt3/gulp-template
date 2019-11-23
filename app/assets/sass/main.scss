@@ -13,18 +13,15 @@
 @import 'parts/buttons';
 @import 'parts/forms';
 
-
-@import 'shared/shared-main';
-@import 'shared/shared-header';
-@import 'shared/shared-navigation';
-@import 'shared/shared-footer';
-
 // remove this for plain version of bolerplate
-header, .site-content, .footer {
+header,
+.site-content,
+.footer {
     text-align: center;
     margin: 0 auto 20px;
     max-width: 640px;
 }
+
 .navigation {
     ul {
         display: flex;
@@ -33,27 +30,33 @@ header, .site-content, .footer {
         width: 100%;
         margin: 0 auto;
         padding: 0 10px;
+
         li>a {
             display: block;
             margin: 10px;
             color: $blue-dark;
             transition: $dur $ease;
+
             &:hover {
                 color: $blue-light;
             }
         }
     }
 }
+
 .article-title {
     margin: 20px 0 10px;
 }
+
 .article>img {
     margin-bottom: 20px;
 }
+
 .article-wrapper {
     margin-bottom: 20px;
     padding: 0 10px;
 }
+
 .article-text {
     margin-bottom: 20px;
 }

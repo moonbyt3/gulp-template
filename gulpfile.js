@@ -35,7 +35,7 @@ gulp.task('svgomg', function () {
 
 
 //icon fonts
-gulp.task('fonticons', function () {
+gulp.task('fonticons', function (done) {
   gulp.src(['app/assets/svg/*.svg'])
     .pipe(iconfontCss({
       fontName: 'fonticons',
@@ -56,6 +56,7 @@ gulp.task('fonticons', function () {
       console.log(glyphs, options);
     })
     .pipe(gulp.dest('app/assets/icons/'));
+    done();
 });
 
 gulp.task('browserSync', function () {

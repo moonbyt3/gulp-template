@@ -66,8 +66,7 @@ gulp.task('browserSync', function () {
   })
 });
 
-
-gulp.task('watch', ['sass', 'browserSync'], function () {
+gulp.task('watch', gulp.series('sass', 'browserSync', function (done) {
   gulp.watch('app/assets/sass/**/*.scss', ['sass']);
   // Reloads the browser whenever HTML, JS or SCSS files change
   gulp.watch('app/*.html', browserSync.reload);
@@ -75,7 +74,5 @@ gulp.task('watch', ['sass', 'browserSync'], function () {
   gulp.watch('app/assets/sass/**/.scss', browserSync.reload);
   //watch added or changed svg files to optimize them
   gulp.watch('assets/svg/*.svg', ['svgomg']);
-});
-
-// Build
-gulp.task('build', ['sass']);
+  done();
+}));

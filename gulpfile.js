@@ -7,15 +7,8 @@ var gulp = require('gulp'),
 var browserSync = require('browser-sync').create();
 var runTimestamp = Math.round(Date.now() / 1000);
 
-gulp.task('sass', function () {
-  return gulp.src('app/assets/sass/*.scss')
-    .pipe(sass()) // Converts Sass to CSS with gulp-sass
-    .pipe(gulp.dest('app'))
-    .pipe(browserSync.stream());
-});
-
 // SVG optimization
-gulp.task('svgomg', function () {
+function svgomg() {
   return gulp.src('assets/svg/*.svg')
     .pipe(svgmin({
       plugins: [{
@@ -30,8 +23,8 @@ gulp.task('svgomg', function () {
         //{ removeStyleElement: true }
       ]
     }))
-    .pipe(gulp.dest('assets/svg'))
-});
+    .pipe(gulp.dest('assets/svg'));
+};
 
 
 //icon fonts
@@ -41,7 +34,7 @@ gulp.task('fonticons', function (done) {
       fontName: 'fonticons',
       cssClass: 'font',
       path: 'app/assets/config/icon-font-config.scss', // where is template for updateing sass file
-      targetPath: '../../assets/sass/base/_icon-font.scss', //where to update sass file
+      targetPath: '../../assets/scss/base/_icon-font.scss', //where to update sass file
       fontPath: '../../assets/icons/' // where are fonts exported
     }))
     .pipe(iconfont({
@@ -59,21 +52,25 @@ gulp.task('fonticons', function (done) {
     done();
 });
 
-gulp.task('browserSync', function () {
-  browserSync.init({
-    server: {
-      baseDir: 'app'
-    },
-  })
-});
+function scss() {
+  return gulp.src('app/assets/scss/**/*.scss')
+  .pipe(sass().on('error',sass.logError))
+  .pipe(gulp.dest('app'))
+  .pipe(browserSync.stream());
+}
 
-gulp.task('watch', gulp.series('sass', 'browserSync', function (done) {
-  gulp.watch('app/assets/sass/**/*.scss', ['sass']);
-  // Reloads the browser whenever HTML, JS or SCSS files change
-  gulp.watch('app/*.html', browserSync.reload);
-  gulp.watch('app/assets/js/*.js', browserSync.reload);
-  gulp.watch('app/assets/sass/**/.scss', browserSync.reload);
-  //watch added or changed svg files to optimize them
-  gulp.watch('assets/svg/*.svg', ['svgomg']);
-  done();
-}));
+function watch() {
+  browserSync.init({
+      server: {
+         baseDir: "./app",
+         index: "/index.html"
+      }
+  });
+  gulp.watch('app/assets/scss/**/*.scss', scss)
+  gulp.watch('app/*.html').on('change', browserSync.reload);
+  gulp.watch('app/assets/js/**/*.js').on('change', browserSync.reload);
+  gulp.watch('app/assets/svg/*.svg', svgomg);
+}
+
+exports.scss = scss;
+exports.watch = watch;

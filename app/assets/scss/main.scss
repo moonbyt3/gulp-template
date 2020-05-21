@@ -1,0 +1,62 @@
+@import 'config/reset';
+@import 'base/base';
+
+@import 'config/variables';
+@import 'config/colors';
+
+@import 'helpers/mixins';
+@import 'helpers/helper-classes';
+
+@import 'base/typography';
+@import 'base/icon-font';
+
+@import 'parts/buttons';
+@import 'parts/forms';
+
+// remove this for plain version of bolerplate
+header,
+.site-content,
+.footer {
+    text-align: center;
+    margin: 0 auto 20px;
+    max-width: 640px;
+}
+
+.navigation {
+    ul {
+        display: flex;
+        justify-content: space-between;
+        max-width: 640px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 10px;
+
+        li>a {
+            display: block;
+            margin: 10px;
+            color: $blue-dark;
+            transition: $dur $ease;
+
+            &:hover {
+                color: $blue-light;
+            }
+        }
+    }
+}
+
+.article-title {
+    margin: 20px 0 10px;
+}
+
+.article>img {
+    margin-bottom: 20px;
+}
+
+.article-wrapper {
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+.article-text {
+    margin-bottom: 20px;
+}
